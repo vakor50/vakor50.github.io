@@ -17,11 +17,6 @@
 
 	</head>
 
-<!-- Reference: used to create bootstrap icons -->
-<!-- http://getbootstrap.com/components/ -->
-<!-- <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> -->
-
-
 	<body>
 		<!-- Navigation -->
 		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -70,9 +65,8 @@
 
 		<!-- Intro Header -->
     <header class="intro">
-				<div id="delta"></div>
-
-				<!-- Create title text that switches between multiple fonts -->
+				<div id="delta">
+				</div>
         <!-- <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -88,68 +82,13 @@
     </header>
 
 		<!-- About Section -->
-    <section id="about" class="container content-section">
+    <section id="about" class="container content-section text-center">
       <div class="row">
-          <!-- <div class="col-lg-8 col-lg-offset-2">
-					</div> -->
-					<!-- <div id="bar"></div> -->
-					<h2 id="subj">Who am I?</h2>
-					<hr>
-					<div id="language-main">
-							<div class="col-lg-3 col-lg-offset-1">
-									<h4 class="text-center">Characteristic 1</h4>
-							</div>
-							<div class="col-lg-3 col-lg-offset-1">
-									<h4 class="text-center">Characteristic 2</h4>
-							</div>
-							<div class="col-lg-3 col-lg-offset-1">
-									<h4 class="text-center">Characteristic 2</h4>
-							</div>
-					</div>
-					<br>
-					<div class="col-lg-12">
-							<p><strong>Other Languages:</strong>First, Second, Third, Fourth</p>
-					</div>
+          <div class="col-lg-8 col-lg-offset-2">
+							<div id="bar"></div>
+          </div>
       </div>
     </section>
-
-		<!-- Download Section -->
-		<section id="download" class="content-section text-center">
-				<div class="download-section">
-						<div class="container">
-								<div class="col-lg-8 col-lg-offset-2">
-										<!-- <h2>Look at My Resume</h2>
-										<p>You can view it here!</p> -->
-										<a href="Vir_Thakor_Resume.pdf" class="btn btn-default btn-lg">Resume</a>
-								</div>
-						</div>
-				</div>
-		</section>
-
-		<!-- Contact Section -->
-		<section id="contact" class="container content-section text-center">
-				<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-								<h2>Contact</h2>
-                <br>
-                <p>Reach me via email and follow me on the following:</p>
-								<ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="mailto:virthakor@ucla.edu" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Email</span></a>
-                    </li>
-										<li>
-												<a href="https://instagram.com/virless/" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
-										</li>
-										<li>
-												<a href="https://github.com/vakor50" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-										</li>
-										<li>
-												<a href="https://www.facebook.com/VirThakor" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-										</li>
-								</ul>
-						</div>
-				</div>
-		</section>
 
 		<!-- Footer -->
 		<footer>
@@ -180,16 +119,10 @@
 	</body>
 	<script type="text/javascript">
 
-		// ----------------------------------------------------------------------------
-		// shift to second page after 5 seconds
-
 		$(document).ready(function() {
 			// after some number of seconds on the homepage, slide to about section
-			// $("html, body").delay(5000).animate({scrollTop: $('#about').offset().top }, 2000);
+			// $("html, body").delay(10000).animate({scrollTop: $('#about').offset().top }, 2000);
 		});
-
-		// ----------------------------------------------------------------------------
-		// oscillate title text between different fonts
 
 		$('.title-header').hover(
 	    function() {
@@ -205,14 +138,14 @@
 
 		var count = 0;
 		setInterval(function() {
-			$('.title-header').fadeOut(50, function() {
+			$('.title-header').fadeOut(150, function() {
 				var $this = $(this);
 
 				if (count == 10) {
 					count = 0;
 				}
 
-				// count = 5;
+				count = 4;
 
 				switch(count) {
 					case 0:
@@ -248,14 +181,11 @@
 				}
 				count++;
 
-				$this.fadeIn(50);
+				$this.fadeIn(150);
 			});
-		}, 400);
+		}, 500);
 
 		// ----------------------------------------------------------------------------
-		// d3.js
-		// code to create floating ball field on opening page
-
 
 		var w = $('.intro').width(),
         h = $('.intro').height();
@@ -348,7 +278,7 @@
 
 // ----------------------------------------------------
 
-// var data = [4, 8, 15, 3, 8, 13, 2, 1, 3];
+var data = [4, 8, 15, 3, 8, 13, 2, 1, 3];
 
 var width = 960,
     height = 500;

@@ -1,0 +1,14 @@
+TODO:
+- draggable directions
+      https://developers.google.com/maps/documentation/javascript/examples/directions-draggable
+- waypoints in directions (mutliple stops)
+      https://developers.google.com/maps/documentation/javascript/examples/directions-waypoints
+
+
+COMPLETED:
+- search bar
+      https://developers.google.com/maps/documentation/javascript/examples/places-searchbox
+- enable sign in to gmail
+      https://developers.google.com/maps/documentation/javascript/examples/save-simple
+- geolocation to where you're located (must be on localhost)
+      https://developers.google.com/maps/documentation/javascript/examples/map-geolocation

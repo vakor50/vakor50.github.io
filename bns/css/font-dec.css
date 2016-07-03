@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Dosis";
+    src: url(../fonts/dosis/Dosis-Regular.otf) format("truetype");
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat/Montserrat-Regular.otf) format("truetype");
+}
+@font-face {
+    font-family: "Raleway";
+    src: url(../fonts/raleway/Raleway-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Monoglyceride";
+    src: url(../fonts/Monoglyceride.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Vonique";
+    src: url(../fonts/Vonique.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Thin.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-2";
+    src: url(../fonts/Roboto-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "CutTheCrap";
+    src: url(../fonts/cut_the_crap/Cut_the_crap.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Indelible";
+    src: url(../fonts/indelible/Indelible.otf) format("truetype");
+}
+
+@font-face {
+    font-family: "MilasianCirca";
+    src: url(../fonts/milasian_circa/MilasianCircaMediumPERSONAL.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Quartzo";
+    src: url(../fonts/quartzo/QUARTZO.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Waltograph";
+    src: url(../fonts/walt_disney/waltographUI.ttf) format("truetype");
+}
