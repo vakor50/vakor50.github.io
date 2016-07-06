@@ -269,8 +269,8 @@
 
 		var force = d3.layout.force()
 
-		    .gravity(0.08)
-		    .charge(function(d, i) { return i ? -30 : -500; })
+		    .gravity(0.02)
+		    .charge(function(d, i) { return i ? -30 : -800; })
 		    // .charge(-10)
 		    .nodes(nodes)
 		    .size([w, h]);
