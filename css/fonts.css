@@ -1,0 +1,26 @@
+@font-face {
+	font-family: "Raleway";
+	src: url(Raleway-Regular.ttf) format("truetype");
+}
+
+.Raleway {
+	font-family: "Raleway";
+}
+
+@font-face {
+	font-family: "Dosis";
+	src: url(Dosis-Regular.otf) format("truetype");
+}
+
+.Dosis {
+	font-family: "Dosis";
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url(Roboto-Regular.ttf) format("truetype");
+}
+
+.Roboto-Regular {
+    font-family: "Roboto-Regular";
+}
