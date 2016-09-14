@@ -1,0 +1,104 @@
+.parallax { 
+	/* The image used */
+	background-image: url("../img/a.jpg");
+	/* Set a specific height */
+	height: 100%; 
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+table {
+	margin-top: 50px; 
+}
+table, th, td {
+	/*border: 1px solid black;*/
+	text-align: center;
+}
+td{
+	padding: 0;
+}
+#myList {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+#purchaseInput div{
+	padding-bottom: 10px;
+}
+#title {
+	text-align: center; 
+	padding-bottom: 25px; 
+	margin-top: 90px; 
+	color:white;
+}
+#section1 {
+	background-color: white; 
+	padding: 20px; 
+	padding-top: 0px;
+	border-radius: 10px;
+	opacity: 0.8;
+}
+#myList li:first-child {
+	text-align: center; 
+	text-decoration: underline; 
+	font-weight: bold;
+}
+#addPerson {
+	padding-bottom: 25px;
+}
+#section2 {
+	background-color: white; 
+	padding: 10px; 
+	padding-left: 20px;
+	border-radius: 10px;
+	opacity: 0.8;
+}
+#addPurchaser {
+	padding-top:25px;
+}
+#mySelect {
+	width: 300px; 
+	color: grey;
+}
+#myType {
+	width: 300px;
+}
+#numberBox {
+	width: 300px;
+}
+#addPurchaseButton {
+	margin-bottom: 25px;
+}
+#section3 {
+	background-color: white; 
+	padding: 10px; 
+	padding-left: 20px;
+	border-radius: 10px;
+	opacity: 0.8;
+}
+#purchaseTable {
+	overflow-x:auto;
+}
+#output div {
+	background-color: white;
+	opacity: 0.8;
+	padding: 20px;
+	border-radius: 10px;
+}
+input {
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+#out {
+
+}
+
+#out:hover {
+	background-color: lightgrey;
+}
+button {
+	opacity: 1.2;
+}

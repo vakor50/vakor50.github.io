@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tages *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	
+
+	<!-- Link for bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+	<!-- Links for fa fa buttons -->
+	<!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">-->
+
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/cost.css">
+
+	<link rel="stylesheet" type="text/css" href="css/build.css">
+
+	<!-- Include jQuery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body class="parallax">
+
+	<!-- ******************************************** -->
+	<!-- 			   Navigation Bar 			      -->
+	<!-- ******************************************** --> 	 
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Breakfast</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="home.html">Home</a></li>
+					<li><a href="7.html">Cost Splitter</a></li>
+					<li><a href="#contact">Contact</a></li>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div class="container">
+
+		<div id="header">
+
+		<h2 id="title" > Cost Splitter </h2>
+
+
+		
+
+		</div>
+		
+		<div  id="section1">
+
+		
+		
+
+		<!-- ******************************************** -->
+		<!-- 			  Trip Participants 			  -->
+		<!-- ******************************************** --> 
+		<ul id="myList" class="list-group">
+			<li class="list-group-item" >Trip Participants</li>
+		</ul>
+
+
+		<!-- ******************************************** -->
+		<!-- 			   Add a Person			      	  -->
+		<!-- ******************************************** --> 
+		<div  id="addPerson" class="form-inline">
+      		<input class="form-control" type="text" id="myText" placeholder="Jane Doe">
+   			<button id="addItemButton" class="btn btn-primary">Add Person</button>
+     	</div>
+
+		</div>
+
+		<hr>
+
+		<div  id="section2">
+
+		<div id="purchaseInput">
+			<!-- ******************************************** -->
+			<!-- 			   Select a Purchaser			  -->
+			<!-- ******************************************** --> 
+			<div id="addPurchaser"  class="row">
+				<label class="col-sm-2 col-form-label">Select Purchaser:</label>
+				<div class="col-sm-10">
+					<select class="form-control col-sm-2" id="mySelect" >
+						<option>Who purchased it?</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- ******************************************** -->
+			<!-- 			Type and Amount Fields			  -->
+			<!-- ******************************************** --> 
+			<div class="row">
+				<label class="col-sm-2 col-form-label">Type of purchase:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="myType" placeholder="What did you buy?" >
+				</div>
+		    </div>
+		    
+			<div class="row">
+				<label class="col-sm-2 col-form-label">Purchase amount:</label>
+				<div class="col-sm-10"  >
+					<div class="input-group" id="numberBox" >
+						<div class="input-group-addon">$</div>
+						<input type="number" class="form-control" id="myAmt" placeholder="Amount">
+						<!-- <div class="input-group-addon">.00</div> -->
+					</div>
+				</div>
+			</div>
+	    </div>
+
+		<!-- ******************************************** -->
+		<!-- 			 Add A Purchase Button			  -->
+		<!-- ******************************************** --> 
+		<button  class="btn btn-primary" id="addPurchaseButton">Add Purchase</button>
+
+		</div>
+
+		<hr>
+
+		<div  id="section3">
+
+		<!-- ******************************************** -->
+		<!-- 			   Purhcases Table 			      -->
+		<!-- ******************************************** -->
+		<div id="purchaseTable" > 
+			<table id="projectSpreadsheet" class="table table-responsive">
+				<thead>
+					<tr id="myHeader">
+						<th>#</th>
+						<th>Item</th>
+						<th>Purchaser</th>
+						<th>Amount</th>
+					</tr>
+				</thead>
+				<tbody id="myTBody">
+				</tbody>
+			</table>
+		</div>
+
+		<!-- ******************************************** -->
+		<!-- 			   Calculate Button			      -->
+		<!-- ******************************************** --> 
+		<button class="btn btn-primary" id="calculate">Calculate</button>
+
+		<a href="#" id="xx" style=" text-decoration:none;color:#000;background-color:#ddd;border:1px solid #ccc;padding:8px; margin-left: 10px;">Export Purchases</a>
+
+		</div>
+
+		<hr>
+
+		<div id="output"></div>
+
+
+		<!-- Include code to handle buttons -->
+		<script type="text/javascript" src="js/buttons.js"></script>
+		<script type="text/javascript" src="js/tableToCSV.js"></script>
+		<script type="text/javascript" src="js/tableToPDF.js"></script>
+		
+	</div>
+
+</body>
+
+</html>
