@@ -33,6 +33,14 @@ td{
 	margin-top: 90px; 
 	color:white;
 }
+#about {
+	background-color: white; 
+	padding: 20px; 
+	/*padding-top: 0px;*/
+	border-radius: 10px;
+	opacity: 0.8;
+	margin-bottom: 20px;
+}
 #section1 {
 	background-color: white; 
 	padding: 20px; 
