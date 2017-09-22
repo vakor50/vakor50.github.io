@@ -72,6 +72,9 @@ $('#searchButton').click(function() {
 			.replace(/ who /g, ' ')
 			.replace(/ what /g, ' ')
 			.replace(/ where /g, ' ')
+			.replace(/\t+/g, ' ')
+			.replace(/ t /g, ' ')
+			.replace(/ has /g, ' ')
 			.trim();
 
 	// perform mapping between word and its frequency
