@@ -60,10 +60,37 @@ $('a[href*="#"]')
     }
 );
 
+var courses = [
+    { "code": "CS 181",   "name": "Introduction to Formal Languages and Automata" },
+    { "code": "CS CM124", "name": "Computational Genetics" },
+    { "code": "CS 118",   "name": "Computer Network Fundamentals" },
+    { "code": "CS 131",   "name": "Programming Languages" },
+    { "code": "CS M117",  "name": "Computer Networks: Physical Layer" },
+    { "code": "CS 130",   "name": "Software Engineering" },
+    { "code": "CS 170A",  "name": "Mathematical Modeling and Methods for Computer Science" },
+    { "code": "CS 174",   "name": "Introduction to Computer Graphics" },
+    { "code": "CS M151B", "name": "Computer Systems Architecture" },
+    { "code": "CS 144",   "name": "Web Applications" },
+    { "code": "CS M152A", "name": "Introductory Digital Design Lab" },
+    { "code": "CS 161",   "name": "Introduction to Artificial Intelligence" },
+    { "code": "CS 145",   "name": "Introduction to Data Mining" },
+    { "code": "CS 143",   "name": "Database Systems" },
+    { "code": "CS 180",   "name": "Introduction to Algorithms and Complexity" },
+    { "code": "CS 111",   "name": "Operating Systems Principles" },
+    { "code": "CS M51A",  "name": "Logic Design of Digital Systems" },
+    { "code": "CS 33",    "name": "Introduction to Computer Organization" },
+    { "code": "CS 32",    "name": "Introduction to Data Structures" },
+    { "code": "CS 31",    "name": "Introduction to Computer Science" },
+]
+
 $(document).ready(function() {
     // Run it when the page loads
     checkOffset();
 
+    for (var i = 0; i < courses.length; i++) {
+        $("#schedule").append('<div class="col-sm-2 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2"><h4 class="courses">' + courses[i].code + '</h4></div><div class="col-sm-10 col-md-8 col-lg-8"><h4 class="courses">' + courses[i].name + '</h4><!-- <p>This is a description about this class</p> --></div>');
+    }
+    
 
     // Run function when scrolling
     $(window).scroll(function() {

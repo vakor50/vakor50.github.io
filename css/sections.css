@@ -227,3 +227,13 @@
 footer {
   margin-top: 20%;
 }
+
+.myProject {
+  min-height: 100px;
+}
+
+@media(min-width:768px) {
+  .myProject {
+    min-height: 200px;
+  }
+}
