@@ -133,7 +133,7 @@ function populateData() {
 $(document).ready(function () {
     var height = $( document ).height();
     console.log(height);
-    $("#spell-book").css("max-height", height-200 + "px !important");
+    $("#spell-book").css("max-height", height + "px !important");
 
     spell_list = $.getJSON('dnd_spells.json');
 
