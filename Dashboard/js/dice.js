@@ -72,7 +72,3 @@ $("#calculate").click(function () {
 
 	$("#die-results").val(resultString + $("#die-results").val());
 });
-
-$(document).ready(function () {
-
-});

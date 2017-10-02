@@ -193,9 +193,3 @@ $("#next-player").click(function () {
 
 });
 
-$(document).ready(function () {
-
-
-
-
-});
