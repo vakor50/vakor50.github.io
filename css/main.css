@@ -367,9 +367,9 @@ html, body {
 
 
 .myProject img {
-  max-width: 100%; 
-  height: 200px;
-  border: solid 1px black;
+  max-width: 100% !important; 
+  height: 200px !important;
+  border: solid 1px black !important;
 }
 
 .myProject {
