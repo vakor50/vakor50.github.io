@@ -12,8 +12,7 @@ function isHTML(str) {
 	return false;
 }
 
-// initialize mapping of words to frequency
-var arr = [{k:"-", v:0}];
+
 
 // ******************************************************** //
 //        JS Function to be run upon 'Search' click			//
@@ -22,6 +21,8 @@ var arr = [{k:"-", v:0}];
 $('#searchButton').click(function() {
 	// obtain text in input box
 	var text = $('#website').val().trim();
+	// initialize mapping of words to frequency
+	var arr = [];
 
 	// remove HTML
 	if(isHTML(text)) {
@@ -78,10 +79,19 @@ $('#searchButton').click(function() {
 			.trim();
 
 	// perform mapping between word and its frequency
-	var counts = text.replace(/[^\w\s]/g, "").split(/\s+/).reduce(function(map, word){
-		map[word] = (map[word]||0)+1;
-		return map;
-	}, Object.create(null));
+	// var counts = text.replace(/[^\w\s]/g, "").split(/\s+/).reduce(function(map, word){
+	// 	map[word] = (map[word]||0)+1;
+	// 	return map;
+	// }, Object.create(null));
+
+	var counts = {}
+	text.replace(/[^\w\s]/g, "").split(/\s+/).forEach(function (key) {
+		if (counts.hasOwnProperty(key)) {
+			if (counts[key] < 15) counts[key]++;
+		} else {
+			counts[key] = 1;
+		}
+	});
 
 	console.log(text);
 	console.log(counts);
@@ -103,8 +113,8 @@ $('#searchButton').click(function() {
 	console.log(arr);
 
 	// set height and width of the div that contains the bubble cloud
-	var width = $(window).width(),
-		height = $(window).width();
+	var width = 1000,
+		height = 1000;
 
 	// set initial settings for bubble
 	var diameter = 960,
@@ -131,11 +141,20 @@ $('#searchButton').click(function() {
 			console.log(arr[d].v);
 			return {radius: arr[d].v * 10}; 
 		}),
-		root = nodes[0],
 		color = d3.scale.category20c();
 
-	root.radius = 0;
-	root.fixed = true;
+	root = {
+		fixed: true,
+		index: 0,
+		px:0,
+		py:0,
+		radius:0,
+		weight:0,
+		x:0,
+		y:0
+	}
+
+	nodes.unshift(root);
 
 	// create gravity effect on nodes centered on center of bubble div
 	var force = d3.layout.force()
@@ -151,12 +170,12 @@ $('#searchButton').click(function() {
 	var t = 1;
 
 	// iterate through array of mapped words
-	for (var cir = 1; cir < arr.length; cir++) {
-		console.log("loop " + cir);
+	// for (var cir = 1; cir < arr.length; cir++) {
+		// console.log("loop " + cir);
 		var node = svg.selectAll(".node")
 				// .data(bubble.nodes(classes(root))
 				// .filter(function(d) { return !d.children; }))
-				.data(nodes.slice(1))
+				.data(nodes)
 			.enter().append("g")
 				.attr("class", "node")
 				.attr("transform", function() { return "translate(" + 0 + "," + 0 + ")"; });
@@ -164,10 +183,12 @@ $('#searchButton').click(function() {
 		// node.append("title")
 		// 	.text(function(d) { return d.className + ": " + format(d.value); });
 
+		console.log(arr)
 		// create the circle whose radius is based on the word frequency
 		node.append("circle")
-			.attr("r", function(d) { 
-				return arr[radius++].v * 10; 
+			.attr("r", function(d, i) { 
+				console.log(i)
+				if (i > 0) return arr[--i].v * 10; 
 			})
 			.style("fill", function(d, i) { return color(i % 3); });
 
@@ -177,13 +198,13 @@ $('#searchButton').click(function() {
 			.attr("dy", ".3em")
 			.style("text-anchor", "middle")
 			.style("color", "white")
-			.text(function(d) { 
-				return arr[t++].k; 
+			.text(function(d, i) { 
+				if (i > 0) return arr[--i].k; 
 			});
 
-		radius++;
-		t++;
-	}
+		// radius++;
+		// t++;
+	// }
 
 
 	// adjust force on circles on tick
