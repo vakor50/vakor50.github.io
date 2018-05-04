@@ -83,7 +83,15 @@ var courses = [
     { "code": "CS 31",    "name": "Introduction to Computer Science" },
 ]
 
+
+
 $(document).ready(function() {
+    $('.section-links').click(function (event) {
+        event.preventDefault();
+        var elem_id = $(this).attr('href')
+        var top = document.getElementById(elem_id).scrollIntoView()
+    })
+
     // Run it when the page loads
     checkOffset();
 
