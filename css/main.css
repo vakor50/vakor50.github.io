@@ -364,12 +364,12 @@ html, body {
 
 
 
-.myProject img {
+.myProject > img {
   max-width: 100% !important; 
-  height: 200px !important;
+  height: 300px !important;
   border: solid 1px black !important;
 }
 
 .myProject {
-  height: 450px !important;
+  height: 550px !important;
 }
