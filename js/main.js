@@ -61,6 +61,7 @@ $('a[href*="#"]')
 );
 
 var courses = [
+    { "code": "Coursera", "name": "Machine Learning (in progress)"},
     { "code": "CS 181",   "name": "Introduction to Formal Languages and Automata" },
     { "code": "CS CM124", "name": "Computational Genetics" },
     { "code": "CS 118",   "name": "Computer Network Fundamentals" },
@@ -96,7 +97,14 @@ $(document).ready(function() {
     checkOffset();
 
     for (var i = 0; i < courses.length; i++) {
-        $("#schedule").append('<div class="col-sm-2 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2"><h4 class="courses">' + courses[i].code + '</h4></div><div class="col-sm-10 col-md-8 col-lg-8"><h4 class="courses">' + courses[i].name + '</h4><!-- <p>This is a description about this class</p> --></div>');
+        $("#schedule").append(
+            '<div class="col-sm-2 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2">'
+                + '<h5 class="courses">' + courses[i].code + '</h5>'
+            + '</div>'
+            + '<div class="col-sm-10 col-md-8 col-lg-8">'
+                + '<h5 class="courses">' + courses[i].name + '</h5>'
+                + '<!-- <p>This is a description about this class</p> -->'
+            + '</div>');
     }
     
 
