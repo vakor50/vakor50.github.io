@@ -6,6 +6,16 @@
  * Depends on: all other CSS files (overrides their values)
  */
 
+@media (min-width: 1400px) {
+    /* ── Hero ── */
+    /* Switch to contain so the full portrait is always visible on large screens.
+       The panel background fills any remaining space around the image. */
+    .hero-img {
+        object-fit: contain;
+        object-position: center center;
+    }
+}
+
 @media (max-width: 900px) {
     /* ── Sidebar ── */
     .sidebar {
