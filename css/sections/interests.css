@@ -1,0 +1,189 @@
+/*
+ * sections/interests.css
+ * Interests / Life section: background, interest blocks (header + body),
+ * two-column body layout with reverse variant, and photo grid patterns.
+ * Depends on: tokens.css, components.css (.photo-slot)
+ */
+
+#interests {
+    background: var(--bg2);
+}
+
+#interests .section-inner {
+    padding: 96px 64px;
+}
+
+/* ─── INTEREST BLOCK ─────────────────────────────────────────────────────────── */
+
+.interest-block {
+    margin-bottom: 80px;
+}
+.interest-block:last-child {
+    margin-bottom: 0;
+}
+
+/* ─── INTEREST HEADER ────────────────────────────────────────────────────────── */
+
+.interest-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.interest-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.interest-name {
+    font-family: var(--display);
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.interest-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ─── INTEREST CAROUSEL ───────────────────────────────────────────────────── */
+/*
+ * Horizontal scroll-snap carousel. All slides share the same height
+ * (set via --h on the .interest-carousel element).
+ *
+ * Each child controls its own width via --span (default 1):
+ *   style="--span: 1"  → 1 column wide
+ *   style="--span: 2"  → 2 columns wide
+ *
+ * To change the column count, set --cols on the .interest-carousel element.
+ * To try a new arrangement, just reorder the child divs.
+ */
+
+.interest-carousel-wrapper {
+    position: relative;
+    /* Extra horizontal room for the nav arrow buttons */
+    margin: 0 -18px;
+    padding: 0 18px;
+}
+
+.interest-carousel {
+    --gap: 8px;
+    --cols: 3;
+    display: flex;
+    gap: var(--gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    height: var(--h, 400px);
+    /* prevent content from busting out of the wrapper */
+    max-width: 100%;
+}
+.interest-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Every direct child is a slide */
+.interest-carousel > * {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    height: 100%;
+    /* Width formula: span columns of the visible container width, accounting for gaps */
+    width: calc(var(--span, 1) * (100% + var(--gap)) / var(--cols) - var(--gap));
+}
+
+/* Photo slots: height is fixed by the carousel, not by aspect-ratio */
+.interest-carousel .photo-slot {
+    aspect-ratio: unset;
+    flex-shrink: 0;
+    background: var(--bg);
+}
+
+/* Show the full image rather than cropping it — object-fit: contain
+   keeps the entire photo visible, centered within the slot */
+.interest-carousel .photo-slot img {
+    object-fit: contain;
+    object-position: center center;
+}
+
+/* Text card */
+.interest-carousel .interest-text {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+.interest-carousel .interest-text p {
+    font-size: 0.88rem;
+    color: var(--ink2);
+    line-height: 1.9;
+    margin-bottom: 14px;
+}
+.interest-carousel .interest-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ─── CAROUSEL NAV ──────────────────────────────────────────────────────── */
+
+.carousel-btn {
+    position: absolute;
+    top: calc(var(--h, 400px) / 2);
+    transform: translateY(-50%);
+    z-index: 10;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+    padding: 0;
+    line-height: 1;
+}
+.carousel-btn:hover {
+    background: var(--bg3);
+    border-color: var(--ink2);
+}
+.carousel-btn:disabled {
+    opacity: 0.15;
+    cursor: default;
+    pointer-events: none;
+}
+.carousel-btn-prev {
+    left: 0;
+}
+.carousel-btn-next {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+}
+.carousel-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+}
+.carousel-dot.active {
+    background: var(--warm1);
+    transform: scale(1.4);
+}

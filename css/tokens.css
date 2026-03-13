@@ -1,0 +1,31 @@
+/*
+ * tokens.css
+ * Single source of truth for all design tokens (colors, fonts, spacing).
+ * Update here and changes propagate everywhere.
+ */
+
+:root {
+    /* ── Backgrounds ── */
+    --bg: #141210; /* darkest – page base */
+    --bg2: #1a1713; /* mid-dark – alternate sections */
+    --bg3: #1f1b17; /* slightly lighter – cards, hover states */
+
+    /* ── Text ── */
+    --ink: #e8e0d4; /* primary text */
+    --ink2: #a89880; /* secondary / muted text */
+    --ink3: #ffffff; /* tertiary / placeholder text */
+
+    /* ── Structure ── */
+    --border: #2d2620; /* dividers, card borders */
+
+    /* ── Accent palette ── */
+    --warm1: #c9845a; /* sienna – primary accent (CTAs, active states) */
+    --warm2: #b5a07a; /* sandstone – secondary accent */
+    --warm3: #8fa882; /* sage green – tertiary accent (tags, links) */
+    --warm4: #c4957a; /* dusty terracotta – occasional use */
+
+    /* ── Typography ── */
+    --display: "Cormorant Garamond", serif; /* headings, display text */
+    --body: "Jost", sans-serif; /* body copy, UI text */
+    --mono: "Courier Prime", monospace; /* labels, tags, metadata */
+}

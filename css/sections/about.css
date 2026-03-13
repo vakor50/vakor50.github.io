@@ -1,0 +1,69 @@
+/*
+ * sections/about.css
+ * About section: background, two-column grid (bio text + facts table).
+ * Depends on: tokens.css
+ */
+
+#about {
+    background: var(--bg2);
+}
+
+/* ─── ABOUT GRID ─────────────────────────────────────────────────────────────── */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* ─── BIO TEXT ───────────────────────────────────────────────────────────────── */
+
+.about-text p {
+    font-size: 0.92rem;
+    color: var(--ink2);
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Emphasis within body copy (e.g., university name) */
+.about-text strong {
+    color: var(--ink);
+    font-weight: 400;
+}
+
+/* ─── FACTS TABLE ────────────────────────────────────────────────────────────── */
+
+/* 1px gaps between rows via background trick — mirrors the projects grid */
+.about-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+}
+
+.fact-row {
+    background: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+}
+
+.fact-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink3);
+}
+
+.fact-value {
+    font-family: var(--display);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--ink);
+}

@@ -1,0 +1,145 @@
+/*
+ * components.css
+ * Reusable UI atoms: buttons, tags, photo slots, inline text links.
+ * These components appear in multiple sections — keep SRP by defining
+ * them here rather than inside section files.
+ * Depends on: tokens.css
+ */
+
+/* ─── BUTTONS ───────────────────────────────────────────────────────────────── */
+
+/* Primary outlined button */
+.btn {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 1px solid var(--warm1);
+    color: var(--warm1);
+    transition:
+        background 0.2s,
+        color 0.2s;
+    display: inline-block;
+}
+.btn:hover {
+    background: var(--warm1);
+    color: var(--bg);
+}
+
+/* Ghost / text-only link */
+.btn-text {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink3);
+    transition: color 0.2s;
+}
+.btn-text:hover {
+    color: var(--ink);
+}
+
+/* ─── TAGS ──────────────────────────────────────────────────────────────────── */
+
+.tag {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    color: var(--ink3);
+    display: inline-block;
+}
+
+/* ─── PHOTO SLOTS ───────────────────────────────────────────────────────────── */
+
+.photo-slot {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    aspect-ratio: 4 / 3;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+}
+.photo-slot:hover {
+    border-color: var(--ink3);
+}
+
+/* Aspect ratio variants */
+.photo-slot.tall {
+    aspect-ratio: 3 / 4;
+}
+.photo-slot.wide {
+    aspect-ratio: 16 / 9;
+}
+
+/* ─── IMAGE RESIZE UTILITY ─────────────────────────────────────────────────── */
+/*
+ * Add class="img-fit" to any <img> to make it fill its container and crop from
+ * center. Works inside .photo-slot, .hero-right, or any position:relative box.
+ *
+ * The browser will always display the image at the slot's CSS dimensions —
+ * but providing a source image close to the recommended size avoids wasted
+ * bandwidth. Each photo slot in index.html has its recommended size in the
+ * placeholder label. Rule of thumb: supply 2× the CSS pixel dimensions for
+ * sharp rendering on retina / high-DPI screens.
+ */
+.img-fit {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Shorthand: bare <img> tags inside a slot also get the same treatment */
+.photo-slot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Warm gradient shown when no img is present */
+.photo-slot:not(:has(img))::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(201, 132, 90, 0.06) 0%, transparent 70%);
+}
+
+.photo-slot-label {
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    opacity: 0.4;
+    text-align: center;
+    padding: 8px;
+    user-select: none;
+}
+
+/* ─── INLINE TEXT LINK ──────────────────────────────────────────────────────── */
+
+/* For anchors embedded inside body copy */
+.text-link {
+    color: var(--warm3);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.text-link:hover {
+    color: var(--ink);
+}

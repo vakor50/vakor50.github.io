@@ -1,319 +1,629 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vir Thakor</title>
+        <link rel="icon" href="img/favicon.png" type="image/png" />
 
-	<title>Vir Thakor | Developer</title>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&family=Courier+Prime:ital@0;1&display=swap"
+            rel="stylesheet"
+        />
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<link href="fonts/fonts.css" rel="stylesheet" />
-	<link href="css/main.css" rel="stylesheet" />
-	<link href="css/sections.css" rel="stylesheet" />
+        <!-- Design system: load order matters (tokens first, overrides last) -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/tokens.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/sections/hero.css" />
+        <link rel="stylesheet" href="css/sections/work.css" />
+        <link rel="stylesheet" href="css/sections/projects.css" />
+        <link rel="stylesheet" href="css/sections/interests.css" />
+        <link rel="stylesheet" href="css/sections/about.css" />
+        <link rel="stylesheet" href="css/sections/contact.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+    </head>
+    <body>
+        <!-- ─── Sidebar Nav ──────────────────────────────────────────────────────── -->
+        <aside class="sidebar">
+            <a class="sidebar-logo" href="#top">V · T</a>
+            <nav class="sidebar-links">
+                <a class="sidebar-link active" href="#top">Home</a>
+                <a class="sidebar-link" href="#work">Work</a>
+                <a class="sidebar-link" href="#projects">Projects</a>
+                <a class="sidebar-link" href="#interests">Life</a>
+                <a class="sidebar-link" href="#contact">Contact</a>
+            </nav>
+            <div class="sidebar-bottom"></div>
+        </aside>
 
-</head>
+        <div class="main">
+            <!-- ─── Hero ─────────────────────────────────────────────────────────────── -->
+            <section id="top">
+                <div class="hero">
+                    <div class="hero-left">
+                        <div class="hero-eyebrow">Software Engineer · NYC</div>
+                        <h1 class="hero-name">
+                            Vir
+                            <br />
+                            <em>Thakor</em>
+                        </h1>
+                        <p class="hero-desc">
+                            I love buildings things that people use, quality products and having an impact. I thrive
+                            working with a team, learning how to tackle interesting problems, and improving my craft.
+                        </p>
+                        <div class="hero-cta-row">
+                            <a href="#work" class="btn">See my work</a>
+                            <a href="#contact" class="btn-text">Get in touch →</a>
+                        </div>
+                    </div>
 
-<body>
-	
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-				<i class="fa fa-bars"></i>
-			</button>
-			<!-- Navbar logo -->
-			<a class="page-scroll navbar-brand section-links" href="title">
-				<img id="navbar-logo" src="img/logo_v3_white.png" onmouseover="this.src='img/logo_v3_opaque_white.png'" onmouseout="this.src='img/logo_v3_white.png'" >
-			</a>
-		</div>
+                    <div class="hero-right">
+                        <img src="img/hero/me_in_japan.PNG" alt="Vir Thakor" class="hero-img" />
+                        <div class="hero-caption">Japan, 2024</div>
+                    </div>
+                </div>
+            </section>
 
-		<!-- Navbar options -->
-		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-			<ul class="nav navbar-nav">
-				<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-				<li class="hidden">
-					<a href="#page-top"></a>
-				</li>
-				<li>
-					<a class="page-scroll hover-underline section-links" href="about">About</a>
-				</li>
-				<li>
-					<a class="page-scroll hover-underline section-links" href="info">Resume</a>
-				</li>
-				<li>
-					<a class="page-scroll hover-underline section-links" href="contact">Contact</a>
-				</li>
-				<li>
-					<a class="page-scroll hover-underline section-links" href="projects">Projects</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+            <!-- ─── Work / Experience ─────────────────────────────────────────────────── -->
+            <section id="work">
+                <div class="section-inner">
+                    <div class="section-header reveal">
+                        <span class="section-num">01</span>
+                        <h2 class="section-title">Experience</h2>
+                        <div class="section-rule"></div>
+                    </div>
 
-	<div class="title title-section" id="title">
-		<div id="delta"></div>
-	</div>
+                    <div class="work-list">
+                        <div class="work-item reveal">
+                            <div>
+                                <div class="work-role">Senior Software Engineer 2</div>
+                                <div class="work-company">Etsy, Inc.</div>
+                                <p class="work-desc">
+                                    Full stack development. Have worked on a variety of projects across the buyer &
+                                    seller sides. Notably, worked on the free shipping rollout & adoption, reducing
+                                    estimated delivery date times & improving accuracy, Currently focused on improving
+                                    inventory architecture & performance.
+                                </p>
+                                <div class="work-tags">
+                                    <span class="tag">PHP</span>
+                                    <span class="tag">MySQL</span>
+                                    <span class="tag">React</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">Google Cloud (BigQuery, GCL, Logs)</span>
+                                </div>
+                            </div>
+                            <div class="work-meta">
+                                <div class="work-year">2019 - Present</div>
+                            </div>
+                        </div>
 
-	<div class="content-section" id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2" id="bio">
-					<h2 class="subj">Who am I?</h2>
-					<hr>
-					<p class="Roboto-Regular">Hello, my name is Vir Thakor and I’m a developer currently creating web and data focused products. I recently graduated from <span class="links">UCLA</span> where I majored in Computer Science.</p>
-					<p>I'm passionate about working on cutting edge technologies that improve users’ lives. In particular, I have experience developing web applications on a variety of technology stacks. Most recently I’ve been working on and learning Amazon Web Services, Machine Learning, the Django framework, and React.js.</p>
-					<p>I'm looking for opportunities in fast-paced, collaborative work environments where teams work together to create quality products for customers.</p>
-					<p>Check out my <a href="info" class="links section-links">resume</a> below!</p>
-					<p>When I can, I'm also working on finishing my <a href="bucket.html" class="links">bucket list</a>, but let me know if you have recommendations for things I should add.</p>
-				</div>
-<!-- 				<div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2" id="">
-					<h3 class="subj">Recent Events</h3>
-					<ul class="timeline">
-						<li>
-							<div class="timeline-badge blue">
-								<i class="glyphicon glyphicon-console"></i>
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4 class="timeline-title">Began Working at Customer Value Partners as an Associate Technologist</h4>
-									<p>
-										<small class="text-muted"><i class="glyphicon glyphicon-time"></i>July 2017</small>
-									</p>
-								</div>
-								<div class="timeline-body">
-									<p></p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-badge blue">
-								<i class="glyphicon glyphicon-thumbs-up"></i>
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4 class="timeline-title">Finished Senior Year at UCLA</h4>
-									<p>
-										<small class="text-muted"><i class="glyphicon glyphicon-time"></i>June 2017</small>
-									</p>
-								</div>
-								<div class="timeline-body">
-									<p></p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-badge blue">
-								<i class="glyphicon glyphicon-credit-card"></i>
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4 class="timeline-title">Began Internship with American Express</h4>
-									<p>
-										<small class="text-muted"><i class="glyphicon glyphicon-time"></i> June 2016</small>
-									</p>
-								</div>
-								<div class="timeline-body">
-									<p>Worked within the Global Authorizations Network Team under Project Leader Rick A. Forbes.</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-badge blue">
-								<i class="glyphicon glyphicon-book"></i>
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4 class="timeline-title">Completed My Junior Year at UCLA</h4>
-									<p>
-										<small class="text-muted"><i class="glyphicon glyphicon-time"></i> June 2016</small>
-									</p>
-								</div>
-								<div class="timeline-body">
-									<p></p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="timeline-badge blue">
-								<i class="glyphicon glyphicon-flash"></i>
-							</div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h4 class="timeline-title">Began Internship at the Department of Energy</h4>
-									<p>
-										<small class="text-muted"><i class="glyphicon glyphicon-time"></i> June 2015</small>
-									</p>
-								</div>
-								<div class="timeline-body">
-									<p>Worked under Subhash Choxi to develop a web app for data visualization of sea trade routes.</p>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div> -->
-			</div>
-		</div>
-	</div>
+                        <div class="work-item reveal reveal-d1">
+                            <div>
+                                <div class="work-role">Software Engineer</div>
+                                <div class="work-company">Customer Value Partners</div>
+                                <p class="work-desc">
+                                    Built web applications and data-driven tools for federal and commercial clients.
+                                    Designed and shipped full-stack features across multiple technology stacks. Worked
+                                    on Medicaid platform for reporting and analysis of internal programs. Developer for
+                                    Pixt fashion, an app using clothing image matching to enabled consumer price
+                                    comparison of similar products.
+                                </p>
+                                <div class="work-tags">
+                                    <span class="tag">PHP</span>
+                                    <span class="tag">MySQL</span>
+                                    <span class="tag">AWS</span>
+                                    <span class="tag">LAMP stack</span>
+                                </div>
+                            </div>
+                            <div class="work-meta">
+                                <div class="work-year">2017 — 2019</div>
+                            </div>
+                        </div>
 
+                        <div class="work-item reveal reveal-d2">
+                            <div>
+                                <div class="work-role">Software Engineering Intern</div>
+                                <div class="work-company">American Express</div>
+                                <p class="work-desc">
+                                    Created Proof of Concept project analyzing the Key Management System and feasibility
+                                    of implementing key rotations within DB manager through centrally managed
+                                    implementation. Researched options for encryption key lifecycle: generation,
+                                    exchange, storage, use, shredding, and replacement. Created internal Web App to
+                                    manage uploaded testing information using LAMP stack
+                                </p>
+                            </div>
+                            <div class="work-meta">
+                                <div class="work-year">2016</div>
+                            </div>
+                        </div>
 
-	<div class="content-section" id="info">
-		<div class="container download">
-			<div class="row" id="">
-				<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 btn-box">
-					<a href="Vir_Thakor_Resume.pdf" class="btn btn-lg btn-custom">Resume</a>
-					<p class="subj" style="color: #ccc; margin-top: 10px;">Last updated 9/21/2018</p>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row" id="schedule">
+                        <div class="work-item reveal reveal-d2">
+                            <div>
+                                <div class="work-role">Software Engineering Intern</div>
+                                <div class="work-company">Department of Energy</div>
+                                <p class="work-desc">
+                                    Collaborated with a team to develop a Web Application that visualized the flow of
+                                    commodities by volume via sea routes on an interactive global map. Wrote procedures
+                                    for user to generate customizable queries of trade routes based on commodity, source
+                                    and destination. Then, developed the corresponding route visualizations for ratios
+                                    of goods imported and exported. Implemented algorithm to create interactive and
+                                    animated navigation between cities, ports, and choke points of goods.
+                                </p>
+                                <div class="work-tags">
+                                    <span class="tag">D3.js - Data Visualization</span>
+                                    <span class="tag">Oracle Procedures</span>
+                                    <span class="tag">SQL</span>
+                                </div>
+                            </div>
+                            <div class="work-meta">
+                                <div class="work-year">2015</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-				<div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-					<h2 class="subj">Coursework</h2>
-					<hr>
-				</div>
-			</div>
-		</div>
-	</div>
+            <!-- ─── Projects & Side Work ──────────────────────────────────────────────── -->
+            <section id="projects">
+                <div class="section-inner">
+                    <div class="section-header reveal">
+                        <span class="section-num">02</span>
+                        <h2 class="section-title">
+                            Projects &
+                            <em>Side Work</em>
+                        </h2>
+                        <div class="section-rule"></div>
+                    </div>
 
-	<div class="content-section text-center" id="contact">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h2>Contact</h2>
-					<hr>
-					<p>It's easiest to reach me via email</p>
-					<ul class="list-inline banner-social-buttons">
-						<li>
-							<a href="mailto:thakor.vir@gmail.com" class="btn btn-lg btn-custom"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Email</span></a>
-						</li>
-						<li>
-							<a href="https://github.com/vakor50" class="btn btn-lg btn-custom"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-						</li>
-						<li>
-							<a href="https://www.linkedin.com/in/vir-thakor/" class="btn btn-lg btn-custom"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linked In</span></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div class="projects-grid">
+                        <div class="project-card reveal">
+                            <div class="proj-header">
+                                <div class="proj-num">001</div>
+                                <div class="proj-year">2018</div>
+                            </div>
+                            <div class="proj-title">Web of Connections</div>
+                            <p class="proj-desc">
+                                Interactive node graph for creating and visualizing relationships between entities.
+                                Drag, link, and explore emergent structure.
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/Web-Of-Connections"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                                <a href="demo/web/webv2.html" class="proj-link proj-link-demo">demo →</a>
+                            </div>
+                        </div>
 
-	<div class="project-section text-center" id="projects">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1">
-					<div class="col-lg-12 col-md-12 myTitle">
-						<h2>Projects</h2>
-						<hr>
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Web of Connections</h4>
-						<p>Create and manage connections between nodes, their children and their siblings.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/Web-Of-Connections" role="button">Link to github »</a></p>
-						<p><a class="btn btn-custom" href="web/webv2.html" role="button">View General page »</a></p>
-						<img src="img/Albert_Einstein.png" >
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Trip Cost Splitter</h4>
-						<p>A way to organize costs within a group and determine who owes how much to each person.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/TripPlanner" role="button">Link to github »</a></p>
-						<p><a class="btn btn-custom" href="costSplitter/cost.html" role="button">View page »</a></p>
-						<img src="img/trip2.png" >
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Branching Story</h4>
-						<p>Create a clickable store/game where each option leads to other options.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/BranchingGame" role="button">Link to github »</a></p>
-						<p><a class="btn btn-custom" href="branching/tree.html" role="button">View page »</a></p>
-						<img src="img/branching2.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Daily Tasks Chrome Extension</h4>
-						<p>Extension that helps keep you reminded and track your daily tasks.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/SimpleList" role="button">Link to github »</a></p>
-						<p><a class="btn btn-custom" href="newTab/tasks.html" role="button">View page »</a></p>
-						<img src="img/daily_task.PNG">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Simple List Chrome Extension</h4>
-						<p>Extension that provides a to-do list with tasks that can be marked complete.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/SimpleList" role="button">Link to github »</a></p>
-						<img src="img/new-tab-list.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Bubble Text Visualizer</h4>
-						<p>Create a dynamic word cloud from a block of text.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/DataVisual" role="button">Link to github »</a></p>
-						<p><a class="btn btn-custom" href="bubbles/bubble.html" role="button">View page »</a></p>
-						<img src="img/bubble1.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Random World Generation</h4>
-						<p>Use different algorithms and noise functions to create a map and details about the world.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/RandomWorldGen" role="button">Link to github »</a></p>
-						<img src="img/worldgen1.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>USA Choropleth</h4>
-						<p>Visualize data by county within the US for unemployment, obesity and population</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/Choropleth" role="button">Link to github »</a></p>
-						<img src="img/map1.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Playing with Google Maps API #1</h4>
-						<p>Display restaurants in close proximity with markers. Clicking on a marker navigates to it.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/Google-Maps-Tools" role="button">Link to github »</a></p>
-						<img src="img/map_area1.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Connect Four</h4>
-						<p>The game.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/connectFour" role="button">Link to github »</a></p>
-						<img src="img/connect1.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Dice Game Dashboard</h4>
-						<p>Tools for a game.</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/Dashboard" role="button">Link to github »</a></p>
-						<p><a class="btn btn-custom" href="Dashboard/dashboard.html" role="button">View page »</a></p>
-						<img src="img/dashboard1.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Simple Keyboard Game</h4>
-						<p>WASD controlled game with Space to attack</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/A-Game-Attempt" role="button">Link to github »</a></p>
-						<img src="img/filler1.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Playing with Google Maps API #2</h4>
-						<p>(WIP) Select multiple addresses through which to navigate i.e. A to B to C to D</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/GoogleMaps" role="button">Link to github »</a></p>
-						<img src="img/filler1.png">
-					</div>
-					<div class="col-sm-6 myProject">
-						<h4>Character Contest</h4>
-						<p>Simulate creature stat blocks in contest</p>
-						<p><a class="btn btn-custom" href="https://github.com/vakor50/Arena" role="button">Link to github »</a></p>
-						<p><a class="btn btn-custom" href="arena/arena.html" role="button">View page »</a></p>
-						<img src="img/filler1.png">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <div class="project-card reveal reveal-d1">
+                            <div class="proj-header">
+                                <div class="proj-num">002</div>
+                                <div class="proj-year">2017</div>
+                            </div>
+                            <div class="proj-title">Trip Cost Splitter</div>
+                            <p class="proj-desc">
+                                Group expense tracker that calculates exactly who owes what to whom. Born from a trip
+                                where no one agreed on the math. Didn't know Splitwise existed
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/TripPlanner"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                                <a href="demo/costSplitter/cost.html" class="proj-link proj-link-demo">demo →</a>
+                            </div>
+                        </div>
 
-<!-- 	<footer>
-		
-	</footer> -->
+                        <div class="project-card reveal reveal-d2">
+                            <div class="proj-header">
+                                <div class="proj-num">003</div>
+                                <div class="proj-year">2016</div>
+                            </div>
+                            <div class="proj-title">Bubble Text Visualizer</div>
+                            <p class="proj-desc">
+                                Dynamic word cloud generated from a block of free-form text. Beautiful, surprisingly
+                                addictive, and genuinely useful.
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/DataVisual"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                                <a href="demo/bubbles/bubble.html" class="proj-link proj-link-demo">demo →</a>
+                            </div>
+                        </div>
 
-	<script src="js/d3.v3.min.js"></script>
-	<script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
-	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
-	<!-- <script src="js/jquery.easing.min.js"></script> -->
-	<script src="js/main.js"></script>
-	<script src="js/bubbles.js"></script>
-</body>
+                        <div class="project-card reveal">
+                            <div class="proj-header">
+                                <div class="proj-num">004</div>
+                                <div class="proj-year">2017</div>
+                            </div>
+                            <div class="proj-title">USA Choropleth</div>
+                            <p class="proj-desc">
+                                County-level interactive map visualizing unemployment, obesity, and population data
+                                across the United States.
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/Choropleth"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card reveal reveal-d1">
+                            <div class="proj-header">
+                                <div class="proj-num">005</div>
+                                <div class="proj-year">2018</div>
+                            </div>
+                            <div class="proj-title">Random World Generator</div>
+                            <p class="proj-desc">
+                                Procedural map generation using noise algorithms. Every click produces an entirely new
+                                world with its own geography.
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/RandomWorldGen"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card reveal reveal-d2">
+                            <div class="proj-header">
+                                <div class="proj-num">006</div>
+                                <div class="proj-year">2016</div>
+                            </div>
+                            <div class="proj-title">Daily Tasks Extension</div>
+                            <p class="proj-desc">
+                                Chrome new-tab extension for tracking daily tasks. Shipped, used daily, and still
+                                running in my browser.
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/SimpleList"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                                <a href="demo/newTab/tasks.html" class="proj-link proj-link-demo">demo →</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card reveal">
+                            <div class="proj-header">
+                                <div class="proj-num">007</div>
+                                <div class="proj-year">2017</div>
+                            </div>
+                            <div class="proj-title">Branching Story</div>
+                            <p class="proj-desc">
+                                A clickable narrative game where each choice branches into new paths. Build and explore
+                                your own story tree.
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/BranchingGame"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                                <a href="demo/branching/tree.html" class="proj-link proj-link-demo">demo →</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card reveal reveal-d1">
+                            <div class="proj-header">
+                                <div class="proj-num">008</div>
+                                <div class="proj-year">2017</div>
+                            </div>
+                            <div class="proj-title">Dice Game Dashboard</div>
+                            <p class="proj-desc">
+                                A couple of tools for a tabletop RPG session. Dice rolling, initiative tracking, and D&D
+                                spell reference.
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/Dashboard"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                                <a href="demo/Dashboard/dashboard.html" class="proj-link proj-link-demo">demo →</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card reveal reveal-d2">
+                            <div class="proj-header">
+                                <div class="proj-num">009</div>
+                                <div class="proj-year">2017</div>
+                            </div>
+                            <div class="proj-title">Character Arena</div>
+                            <p class="proj-desc">
+                                Simulate stat-block creatures competing in a battle arena. Input the fighters, run the
+                                numbers, see who wins.
+                            </p>
+                            <div class="proj-links">
+                                <a
+                                    href="https://github.com/vakor50/Arena"
+                                    class="proj-link"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    github →
+                                </a>
+                                <a href="demo/arena/arena.html" class="proj-link proj-link-demo">demo →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ─── Interests / Life ──────────────────────────────────────────────────── -->
+            <section id="interests">
+                <div class="section-inner">
+                    <div class="section-header reveal">
+                        <span class="section-num">03</span>
+                        <h2 class="section-title">
+                            Outside
+                            <em>Life</em>
+                        </h2>
+                        <div class="section-rule"></div>
+                    </div>
+
+                    <!-- Travel -->
+                    <div class="interest-block reveal">
+                        <div class="interest-header">
+                            <span class="interest-icon">✈️</span>
+                            <span class="interest-name">Travel</span>
+                            <div class="interest-rule"></div>
+                        </div>
+                        <!--
+                            Carousel: --cols sets the column count, --h sets the fixed height.
+                            Each child: --span controls width (number of columns it occupies).
+                            To rearrange: reorder the divs. To resize: change --span.
+                        -->
+                        <div class="interest-carousel-wrapper">
+                            <div class="interest-carousel" style="--cols: 3; --h: 440px">
+                                <div class="interest-text" style="--span: 1">
+                                    <p>
+                                        There's a long list of places I want to see, but only so much time to get
+                                        there.
+                                    </p>
+                                    <p>Love a lil coffee break &amp; a sweet treat along the way.</p>
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img src="img/travel/highlight/nara_1.JPG" alt="Nara, Japan" class="img-fit" />
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img
+                                        src="img/travel/highlight/portugal_1.JPG"
+                                        alt="Algarve, Portugal"
+                                        class="img-fit"
+                                    />
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img
+                                        src="img/travel/highlight/switz_1.JPG"
+                                        alt="Switzerland"
+                                        class="img-fit"
+                                    />
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img
+                                        src="img/travel/highlight/denali_2.JPG"
+                                        alt="Denali, Alaska"
+                                        class="img-fit"
+                                    />
+                                </div>
+                                <div class="photo-slot" style="--span: 2">
+                                    <img
+                                        src="img/travel/highlight/tmb_1.JPG"
+                                        alt="Tour du Mont Blanc"
+                                        class="img-fit"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pottery -->
+                    <div class="interest-block reveal">
+                        <div class="interest-header">
+                            <span class="interest-icon">🏺</span>
+                            <span class="interest-name">Pottery</span>
+                            <div class="interest-rule"></div>
+                        </div>
+                        <div class="interest-carousel-wrapper">
+                            <div class="interest-carousel" style="--cols: 3; --h: 440px">
+                                <div class="interest-text" style="--span: 1">
+                                    <p>
+                                        I love working with my hands and an excuse for a desk detox. I took a few
+                                        semesters of wheel pottery in 2024 and 2025 and loved it. Taking a break right
+                                        now &amp; looking for a new outlet.
+                                    </p>
+                                    <p>
+                                        It took ages to figure out getting higher walls, and I still have very weighty
+                                        bottoms. Don't ask me how to do glazing.
+                                    </p>
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img src="img/pottery/pre_trim.jpg" alt="Pre-trimmed pottery" class="img-fit"/>
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img src="img/pottery/vases.jpg" alt="Vases" class="img-fit" />
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img src="img/pottery/teapot.jpg" alt="Teapot" class="img-fit" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interest-block reveal">
+                        <div class="interest-header">
+                            <span class="interest-icon">🪴</span>
+                            <span class="interest-name">Plants</span>
+                            <div class="interest-rule"></div>
+                        </div>
+                        <div class="interest-carousel-wrapper">
+                            <div class="interest-carousel" style="--cols: 3; --h: 440px">
+                                <div class="interest-text" style="--span: 1">
+                                    <p>
+                                        I'm an aspiring plant dad, and these kids stress me out. I love my well behaved
+                                        kids the most, but each one has a special place in my heart. The main thing
+                                        I've learned is that any plant I'm gifted will die.
+                                    </p>
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img src="img/plants/primary/snake.JPG" alt="Snake Plant" class="img-fit" />
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img src="img/plants/primary/duck.JPG" alt="Duck Plant" class="img-fit" />
+                                </div>
+                                <div class="photo-slot" style="--span: 1">
+                                    <img src="img/plants/primary/monstera.JPG" alt="Monstera" class="img-fit" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ─── About ─────────────────────────────────────────────────────────────── -->
+            <section id="about">
+                <div class="section-inner">
+                    <div class="section-header reveal">
+                        <span class="section-num">04</span>
+                        <h2 class="section-title">
+                            About
+                            <em>me</em>
+                        </h2>
+                        <div class="section-rule"></div>
+                    </div>
+
+                    <div class="about-grid">
+                        <div class="about-text reveal">
+                            <p>
+                                I'm Vir — a software engineer based in <strong>New York, NY</strong>. I studied
+                                Computer Science at UCLA and have been working in the industry for 9+ years.
+                                I started learning to code in high school, and have stuck with it since. I like
+                                building things that people use, that helps or impacts real people.
+                            </p>
+                            <p>
+                                When I'm not at a computer I'm usually planning a trip, watching a show, eating
+                                or cooking something yummy, trying to keep my plants alive, or sustaining myself
+                                on caffeine. Interested in tech, politics, personal finance, climate, cuisine, coffee,
+                                and many other things.
+                            </p>
+                        </div>
+
+                        <div class="about-facts reveal reveal-d1">
+                            <div class="fact-row">
+                                <span class="fact-label">Based</span>
+                                <span class="fact-value">New York, NY</span>
+                            </div>
+                            <div class="fact-row">
+                                <span class="fact-label">Experience</span>
+                                <span class="fact-value">9+ years</span>
+                            </div>
+                            <div class="fact-row">
+                                <span class="fact-label">Degree</span>
+                                <span class="fact-value">B.S. Computer Science, UCLA</span>
+                            </div>
+                            <div class="fact-row">
+                                <span class="fact-label">Bucket list</span>
+                                <span class="fact-value"><a href="bucket.html" class="text-link">Lots left</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ─── Contact ───────────────────────────────────────────────────────────── -->
+            <section id="contact">
+                <div class="section-inner">
+                    <div class="section-header reveal">
+                        <span class="section-num">05</span>
+                        <h2 class="section-title">
+                            Get in
+                            <em>touch</em>
+                        </h2>
+                        <div class="section-rule"></div>
+                    </div>
+
+                    <div class="contact-split">
+                        <div class="reveal">
+                            <p class="contact-intro">
+                                Let's
+                                <em>talk</em>
+                            </p>
+                            <p class="contact-note">
+                                I try my best to respond promptly, but transparently I'm quite bad at it
+                            </p>
+                        </div>
+
+                        <div class="contact-list reveal reveal-d1">
+                            <a href="mailto:thakor.vir@gmail.com" class="contact-item">
+                                <span class="contact-item-name">Email</span>
+                                <span class="contact-item-handle">thakor.vir@gmail.com</span>
+                            </a>
+                            <a href="https://github.com/vakor50" class="contact-item" target="_blank" rel="noopener">
+                                <span class="contact-item-name">GitHub</span>
+                                <span class="contact-item-handle">@vakor50</span>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/vir-thakor/"
+                                class="contact-item"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <span class="contact-item-name">LinkedIn</span>
+                                <span class="contact-item-handle">vir-thakor</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ─── Footer ────────────────────────────────────────────────────────────── -->
+            <footer>
+                <p>© 2026 Vir Thakor</p>
+                <p>Whipped up this revamp with Claude in a day</p>
+            </footer>
+        </div>
+        <!-- /.main -->
+
+        <script src="js/main.js"></script>
+    </body>
 </html>

@@ -1,0 +1,420 @@
+html, body, .container {
+	min-width: 400px;
+	width: auto!important;
+	background-color: #0E0B16; /* Void */
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+
+.container {
+	margin-top: 7%;
+}
+
+.row {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 3%;
+}
+
+nav {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+#date, #time {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+#time {
+	text-align: right;
+}
+
+/* Change the alignment of #time element to left when the browser window is 576px wide or less: */
+@media only screen and (max-width: 576px) {
+	#time {
+		text-align: left;
+	}
+
+}
+
+
+/************************************************/
+/*						Navbar					*/
+/************************************************/
+
+.title {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.title:hover {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 1);
+}
+
+.navbar-nav li:hover {
+	background-color: #0E0B16; /* Void */
+}
+
+#sector1 {
+	margin-top:50px;
+}
+
+.product {
+	text-decoration: none;
+	color: white;
+}
+
+#completion_rate {
+	text-align: center;
+}
+
+#analysis {
+	margin-top: 0px;
+}
+
+#addItem > .input-group {
+	width: 100%;
+}
+
+#addItem > .btn-group {
+	width: 100%;
+	margin-top: 1%;
+}
+
+.list-group-item-text {
+	margin-bottom: 0;
+}
+/************************************************/
+/*						Input					*/
+/************************************************/
+
+.input {
+	background-color: #0E0B16; /* Void */
+	border-radius: 0;
+	border-color: rgba(255, 255, 255, 0.2); 
+	color: rgba(255, 255, 255, 0.5);
+}
+
+div .input:focus {
+	border-color: white;
+	color: #E7DFDD; /* Stark */
+	background-color: #0E0B16; /* Void */
+
+}
+
+#new_task_input {
+	margin-top: 3%;
+	margin-bottom: 1%;
+}
+
+#task_name {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 25px 20px;
+	box-shadow: none;
+}
+
+#task_length {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 25px 20px;
+	box-shadow: none;
+}
+
+textarea {
+    resize: none;
+}
+
+/************************************************/
+/*					Add Button					*/
+/************************************************/
+
+.btn-primary, .btn-primary:focus {
+	background-color: #4515f0; /* Blue */
+	color: #E7DFDD; /* Stark */
+	border: 1px solid transparent;
+	border-radius: 0;
+	box-shadow: none;
+	
+	/* Transitions */
+	-webkit-transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-o-transition: background-color 1s;
+	-ms-transition: background-color 1s;
+	transition: background-color 1s;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:not(:disabled):not(.disabled):active {
+	color: #E7DFDD; /* Stark */
+	background-color: #A238CA; /* Fuschia */
+	border: 1px solid transparent;
+	box-shadow: none;
+}
+
+.btn-outline-primary, .btn-outline-primary:focus {
+	color: #E7DFDD; /* Stark */
+	border: 1px solid #4515f0;
+	border-radius: 0;
+	box-shadow: none;
+	
+	/* Transitions */
+	-webkit-transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-o-transition: background-color 1s;
+	-ms-transition: background-color 1s;
+	transition: background-color 1s;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:not(:disabled):not(.disabled):active {
+	color: #E7DFDD; /* Stark */
+	background-color: #A238CA; /* Fuschia */
+	border: 1px solid #A238CA; /* Fuschia */
+	box-shadow: none;
+}
+
+.btn-secondary, .btn-secondary:focus {
+	background-color: transparent;
+	color: #0E0B16; /* Void */
+	border-width: 1px solid #0E0B16;
+	border-radius: 0;
+	box-shadow: none;
+
+	/* Transitions */
+	-webkit-transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-o-transition: background-color 1s;
+	-ms-transition: background-color 1s;
+	transition: background-color 1s;
+}
+
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:not(:disabled):not(.disabled):active {
+	border-width: 1px solid transparent;
+	color: #E7DFDD; /* Stark */
+	background-color: #6c757d; /* greyish */
+	box-shadow: none;
+}
+
+.btn-checkmark, .btn-checkmark:focus {
+	background-color: transparent; /* Blue */
+	/*color: #E7DFDD; /* Stark */*/
+	color: inherit;
+	border: 1px solid #4515f0;
+	border-radius: 0;
+	box-shadow: none;
+	padding: .2rem .5rem;
+	
+	/* Transitions */
+	-webkit-transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-o-transition: background-color 1s;
+	-ms-transition: background-color 1s;
+	transition: background-color 1s;
+}
+
+.btn-checkmark:hover, .btn-checkmark:active, .btn-checkmark:not(:disabled):not(.disabled):active {
+	color: #E7DFDD; /* Stark */
+	background-color: #A238CA; /* Fuschia */
+	border: 1px solid #A238CA;
+	box-shadow: none;
+}
+
+.empty > i {
+	visibility: hidden;
+}
+
+.empty:hover > i {
+	visibility: visible;
+}
+
+.btn-remove, .btn-remove:focus {
+	background-color: transparent; /* Blue */
+	/*color: #E7DFDD; /* Stark */*/
+	color: inherit;
+	/*border: 1px solid #4515f0;*/
+	border: 1px solid transparent;
+	border-radius: 0;
+	box-shadow: none;
+	padding: .2rem .5rem;
+	
+	/* Transitions */
+	-webkit-transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-o-transition: background-color 1s;
+	-ms-transition: background-color 1s;
+	transition: background-color 1s;
+}
+
+.btn-remove:hover, .btn-remove:active, .btn-remove:not(:disabled):not(.disabled):active {
+	color: #E7DFDD; /* Stark */
+	background-color: #A238CA; /* Fuschia */
+	/*border: 1px solid #A238CA;*/
+	border: 1px solid transparent;
+	box-shadow: none;
+}
+
+.fa-square-o {
+	width: 24px;
+}
+
+.fa-sort-down {
+	top: -2px;
+	position: relative;
+}
+
+.fa-sort-up {
+	top: 8px;
+	position: relative;
+}
+
+.remove {
+    float: right;
+}
+
+#myList > li > .progress {
+	height: 10px;
+}
+
+#myList > li > .btn-checkmark {
+    float: right;
+}
+
+#myList > li > p {
+	margin-bottom: 0;
+}
+
+#otherList > li > .progress {
+	height: 2px;
+}
+
+
+.progress {
+	margin-top: 0.5rem;
+}
+
+.progress-bar {
+	/*background-color: #4515f0; Blue */
+	background-color: #A238CA; /* Fuschia */
+}
+
+.progress-tick {
+	background-color: transparent;
+	border-right: 1px solid #ccc; 
+}
+
+#title-message {
+	text-align: center;
+}
+
+.fa-custom-x {
+	font-size: 1.5em
+}
+
+.check {
+	/*float: right;*/
+}
+
+
+/************************************************/
+/*					Task List					*/
+/************************************************/
+
+.panel {
+	border-width: 0px;
+	margin-bottom: 60px;
+}
+
+ul li:before {
+    /*Using a Bootstrap glyphicon as the bullet point*/
+    /*content: "\e080";*/
+    /*font-family: 'Glyphicons Halflings';*/
+    /*font-size: 14px;*/
+    /*float: left;*/
+    /*margin-top: 4px;*/
+    /*margin-left: 0px;*/
+    /*margin-right: 10px;*/
+    /*color: #CCCCCC;*/
+}
+
+#myList {
+	width: 100%;
+	
+}
+
+#myList li {
+	/*padding: 20px;*/
+	background-color: #ccc !important; 
+	color: #333;
+	border: 1px solid #333;
+	
+	/* Transitions */
+	-webkit-transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-o-transition: background-color 1s;
+	-ms-transition: background-color 1s;
+	transition: background-color 1s;
+}
+
+#myList li:hover {
+	/* Use important so hover continues after click */
+	background-color: #ccc !important; 
+	color: #333;
+}
+
+#otherList > li > h4 {
+	margin-bottom: 0;
+}
+
+#otherList > li > p {
+	margin-bottom: 0.5rem;
+}
+
+#otherList > li > button {
+	color: white;
+}
+
+#otherList li {
+	padding: 20px;
+	background-color: #0E0B16 !important; /* Void */ 
+	color: white;
+	border: 1px solid white;
+	padding-bottom: 25px;
+
+	/* Transitions */
+	-webkit-transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-o-transition: background-color 1s;
+	-ms-transition: background-color 1s;
+	transition: background-color 1s;
+}
+
+li i {
+	float: right;
+	cursor: pointer;
+	/*display: inline-block;*/
+}
+
+li h4 {
+	display: inline-block;
+	/*width: 80%;*/
+}
+
+.list-group-item-heading {
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 80%;
+}
+
+.form-control.is-invalid {
+	border-color: #A238CA; /* Fuschia */
+}
+
+.form-control.is-invalid:focus {
+	border-color: #A238CA; /* Fuschia */
+}
+
+.invalid-feedback {
+	color: #A238CA; /* Fuschia */
+}

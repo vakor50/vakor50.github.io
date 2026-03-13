@@ -1,0 +1,82 @@
+/*
+ * responsive.css
+ * All breakpoint overrides in one place — single source of truth for
+ * responsive behaviour. Ordered to mirror the visual top-to-bottom
+ * structure of the page.
+ * Depends on: all other CSS files (overrides their values)
+ */
+
+@media (max-width: 900px) {
+    /* ── Sidebar ── */
+    .sidebar {
+        display: none;
+    }
+    .main {
+        margin-left: 0;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .hero-right {
+        /* Taller panel so the face is visible; scales with viewport width */
+        min-height: clamp(320px, 80vw, 480px);
+    }
+    /* Shift anchor down so the face shows instead of just the background above */
+    .hero-img {
+        object-position: center 40%;
+    }
+    .hero-left {
+        padding: 60px 28px 48px;
+    }
+
+    /* ── Sections ── */
+    .section-inner {
+        padding: 64px 28px;
+    }
+
+    /* ── Work ── */
+    .work-item {
+        grid-template-columns: 1fr;
+    }
+    .work-meta {
+        text-align: left;
+    }
+
+    /* ── Projects ── */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ── Interests ── */
+    /* Keep the fixed height so photo slots (which have position:absolute imgs)
+       size correctly and text cards stay the same height as photos.
+       360px default leaves room for longer text; overflow-y:auto on .interest-text
+       (set in interests.css) lets users scroll within the card if needed.
+       82% width creates the peek effect so swipe is discoverable. */
+    .interest-carousel {
+        height: var(--h-mobile, 360px);
+    }
+    .interest-carousel > * {
+        width: 82% !important;
+    }
+    .carousel-btn {
+        display: none;
+    }
+
+    /* ── About & Contact ── */
+    .about-grid,
+    .contact-split {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    /* ── Footer ── */
+    footer {
+        padding: 24px 28px;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,115 +1,123 @@
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
+/**
+ * main.js
+ * Vanilla JS — no jQuery, no frameworks, no dependencies.
+ *
+ * Responsibilities (SRP):
+ *   1. Scroll-reveal   — fade/translate elements into view on scroll
+ *   2. Sidebar state   — highlight the active nav link as sections enter
+ */
 
-function checkOffset() {
-    if ($(".navbar").offset().top > $("#about").offset().top - 100) {
-        $(".navbar-fixed-top").addClass("disappear");
-    }     
-    else {
-        $(".navbar-fixed-top").removeClass("disappear");
-    }
-}
+// ─── 1. Scroll Reveal ─────────────────────────────────────────────────────────
+//
+// Any element with class="reveal" starts hidden (opacity:0, translateY) and
+// gains class="in" once it crosses the viewport threshold.
+// Optional modifier classes add staggered delays: reveal-d1, reveal-d2, reveal-d3
 
-// Select all links with hashes
-$('a[href*="#"]')
-    // Remove links that don't actually link to anything
-    .not('[href="#"]')
-    .not('[href="#0"]')
-    .click(function(event) {
-        $('html body').stop();
-        // On-page links
-        if (
-            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-            && 
-            location.hostname == this.hostname
-        ) {
-            // Figure out element to scroll to
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            // Does a scroll target exist?
-
-                // console.log(target.offset().top);
-
-            if (target.length) {
-
-                // Only prevent default if animation is actually gonna happen
-                // event.preventDefault();
-
-                // $('html body').animate({
-                //     scrollTop: target.offset().top
-                // }, 2000);
-                $('html body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000, function() {
-                        // Callback after animation
-                        // Must change focus!
-                        var $target = $(target);
-                        $target.focus();
-                        if ($target.is(":focus")) { // Checking if the target was focused
-                            return false;
-                        } else {
-                            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                            $target.focus(); // Set focus again
-                        }
-                    }
-                );
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("in");
+                revealObserver.unobserve(entry.target); // animate once, then stop watching
             }
-        }
-    }
+        });
+    },
+    { threshold: 0.1 },
 );
 
-var courses = [
-    { "code": "Coursera", "name": "Machine Learning (in progress)"},
-    { "code": "CS 181",   "name": "Introduction to Formal Languages and Automata" },
-    { "code": "CS CM124", "name": "Computational Genetics" },
-    { "code": "CS 118",   "name": "Computer Network Fundamentals" },
-    { "code": "CS 131",   "name": "Programming Languages" },
-    { "code": "CS M117",  "name": "Computer Networks: Physical Layer" },
-    { "code": "CS 130",   "name": "Software Engineering" },
-    { "code": "CS 170A",  "name": "Mathematical Modeling and Methods for Computer Science" },
-    { "code": "CS 174",   "name": "Introduction to Computer Graphics" },
-    { "code": "CS M151B", "name": "Computer Systems Architecture" },
-    { "code": "CS 144",   "name": "Web Applications" },
-    { "code": "CS M152A", "name": "Introductory Digital Design Lab" },
-    { "code": "CS 161",   "name": "Introduction to Artificial Intelligence" },
-    { "code": "CS 145",   "name": "Introduction to Data Mining" },
-    { "code": "CS 143",   "name": "Database Systems" },
-    { "code": "CS 180",   "name": "Introduction to Algorithms and Complexity" },
-    { "code": "CS 111",   "name": "Operating Systems Principles" },
-    { "code": "CS M51A",  "name": "Logic Design of Digital Systems" },
-    { "code": "CS 33",    "name": "Introduction to Computer Organization" },
-    { "code": "CS 32",    "name": "Introduction to Data Structures" },
-    { "code": "CS 31",    "name": "Introduction to Computer Science" },
-]
+document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
+// ─── 2. Active Sidebar Link ───────────────────────────────────────────────────
+//
+// As a section scrolls into the centre of the viewport, the corresponding
+// sidebar link is marked active. rootMargin narrows the trigger zone so the
+// transition feels natural rather than jumping at the very top of each section.
 
+const sidebarLinks = document.querySelectorAll(".sidebar-link");
+const sectionObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                sidebarLinks.forEach((link) => link.classList.remove("active"));
+                const match = document.querySelector(`.sidebar-link[href="#${entry.target.id}"]`);
+                if (match) match.classList.add("active");
+            }
+        });
+    },
+    { rootMargin: "-40% 0px -55% 0px" },
+);
 
-$(document).ready(function() {
-    $('.section-links').click(function (event) {
-        event.preventDefault();
-        var elem_id = $(this).attr('href')
-        var top = document.getElementById(elem_id).scrollIntoView()
-    })
+document.querySelectorAll("section[id]").forEach((s) => sectionObserver.observe(s));
 
-    // Run it when the page loads
-    checkOffset();
+// ─── 3. Carousels ─────────────────────────────────────────────────────────────────────
+//
+// Adds prev/next buttons and dot indicators to every .interest-carousel.
+// Scroll-snap handles the actual snapping and touch gestures natively.
 
-    for (var i = 0; i < courses.length; i++) {
-        $("#schedule").append(
-            '<div class="col-sm-2 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2">'
-                + '<h5 class="courses">' + courses[i].code + '</h5>'
-            + '</div>'
-            + '<div class="col-sm-10 col-md-8 col-lg-8">'
-                + '<h5 class="courses">' + courses[i].name + '</h5>'
-                + '<!-- <p>This is a description about this class</p> -->'
-            + '</div>');
-    }
-    
+document.querySelectorAll(".interest-carousel").forEach((carousel) => {
+    const wrapper = carousel.closest(".interest-carousel-wrapper");
+    if (!wrapper) return;
 
-    // Run function when scrolling
-    $(window).scroll(function() {
-        checkOffset();
+    const slides = Array.from(carousel.children);
+
+    // ── Nav buttons ──
+    const prevBtn = document.createElement("button");
+    prevBtn.className = "carousel-btn carousel-btn-prev";
+    prevBtn.setAttribute("aria-label", "Previous");
+    prevBtn.textContent = "←";
+
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "carousel-btn carousel-btn-next";
+    nextBtn.setAttribute("aria-label", "Next");
+    nextBtn.textContent = "→";
+
+    wrapper.appendChild(prevBtn);
+    wrapper.appendChild(nextBtn);
+
+    // ── Dot indicators ──
+    const dotsEl = document.createElement("div");
+    dotsEl.className = "carousel-dots";
+    slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.className = "carousel-dot";
+        dot.setAttribute("aria-label", `Slide ${i + 1}`);
+        dot.addEventListener("click", () => scrollToIndex(i));
+        dotsEl.appendChild(dot);
     });
+    wrapper.appendChild(dotsEl);
+
+    const dots = Array.from(dotsEl.children);
+
+    function getActiveIndex() {
+        let closest = 0;
+        let minDist = Infinity;
+        slides.forEach((slide, i) => {
+            const dist = Math.abs(slide.offsetLeft - carousel.scrollLeft);
+            if (dist < minDist) {
+                minDist = dist;
+                closest = i;
+            }
+        });
+        return closest;
+    }
+
+    function scrollToIndex(i) {
+        const target = slides[Math.max(0, Math.min(i, slides.length - 1))];
+        carousel.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
+    }
+
+    function updateUI() {
+        const active = getActiveIndex();
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === active));
+        prevBtn.disabled = carousel.scrollLeft <= 1;
+        nextBtn.disabled = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1;
+    }
+
+    prevBtn.addEventListener("click", () => scrollToIndex(getActiveIndex() - 1));
+    nextBtn.addEventListener("click", () => scrollToIndex(getActiveIndex() + 1));
+    carousel.addEventListener("scroll", updateUI, { passive: true });
+
+    // Sync on resize (widths change)
+    new ResizeObserver(updateUI).observe(carousel);
+    updateUI();
 });

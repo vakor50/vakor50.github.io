@@ -1,0 +1,101 @@
+/*
+ * sections/projects.css
+ * Projects & Side Work section: background, card grid, card content,
+ * and multi-link row (github + demo).
+ * Depends on: tokens.css
+ */
+
+#projects {
+    background: var(--bg3);
+}
+
+/* ─── PROJECTS GRID ──────────────────────────────────────────────────────────── */
+
+/* 1px gaps between cards are achieved via the grid background — cleaner
+   than adding borders to individual cards. */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+}
+
+/* ─── PROJECT CARD ───────────────────────────────────────────────────────────── */
+
+.project-card {
+    background: var(--bg);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: background 0.2s;
+}
+.project-card:hover {
+    background: var(--bg3);
+}
+
+/* Header row: number left, year right */
+.proj-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.proj-num {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--warm2);
+    letter-spacing: 0.12em;
+}
+
+.proj-year {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--ink2);
+    letter-spacing: 0.1em;
+}
+
+.proj-title {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.proj-desc {
+    font-size: 0.82rem;
+    color: var(--ink2);
+    line-height: 1.7;
+    flex: 1; /* pushes links to the bottom of each card */
+}
+
+/* ─── PROJECT LINKS ──────────────────────────────────────────────────────────── */
+
+.proj-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+/* Base link style (github) */
+.proj-link {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm3);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.proj-link:hover {
+    color: var(--ink);
+}
+
+/* Demo link gets a slightly different accent */
+.proj-link-demo {
+    color: var(--warm2);
+}
+.proj-link-demo:hover {
+    color: var(--ink);
+}

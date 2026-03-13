@@ -1,0 +1,168 @@
+/*
+ * layout.css
+ * Structural layout: sidebar nav, main wrapper, section shell, reveal
+ * utilities, and footer. These are the "skeleton" concerns — not
+ * section-specific content.
+ * Depends on: tokens.css
+ */
+
+/* ─── SIDEBAR NAV ─────────────────────────────────────────────────────────── */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 72px;
+    height: 100vh;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    z-index: 100;
+    background: var(--bg);
+}
+
+.sidebar-logo {
+    position: absolute;
+    top: 32px;
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: var(--ink2);
+    letter-spacing: 0.05em;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.sidebar-logo:hover {
+    color: var(--ink);
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.sidebar-link {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink2);
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 4px;
+}
+.sidebar-link:hover {
+    color: var(--ink);
+}
+.sidebar-link.active {
+    color: var(--warm1);
+}
+
+.sidebar-bottom {
+    position: absolute;
+    bottom: 32px;
+    width: 1px;
+    height: 48px;
+    background: var(--border);
+}
+
+/* ─── MAIN WRAPPER ─────────────────────────────────────────────────────────── */
+
+.main {
+    margin-left: 72px;
+}
+
+/* ─── SECTION SHELL ────────────────────────────────────────────────────────── */
+
+section {
+    border-bottom: 1px solid var(--border);
+}
+
+.section-inner {
+    padding: 96px 64px;
+}
+
+.section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 64px;
+}
+
+.section-num {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--warm1);
+    flex-shrink: 0;
+}
+
+.section-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+}
+.section-title em {
+    font-style: italic;
+    color: var(--ink2);
+}
+
+.section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ─── SCROLL REVEAL UTILITY ────────────────────────────────────────────────── */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+}
+.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-d1 {
+    transition-delay: 0.1s;
+}
+.reveal-d2 {
+    transition-delay: 0.2s;
+}
+.reveal-d3 {
+    transition-delay: 0.3s;
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────────────────────── */
+
+footer {
+    padding: 32px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    color: var(--ink3);
+}
+
+footer p span {
+    color: var(--warm1);
+}
